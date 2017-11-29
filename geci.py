@@ -12,5 +12,5 @@ for i in range(k):
     data=req.json()
     r=data['lrc']['lyric']
     rr=re.compile('\[(.*?)\]')
-    f.write(re.sub(rr,'',r).decode('utf-8'))
+    f.write(re.sub(rr,'',r).decode('utf-8'))          #调用网易云的API爬歌词，对爬下来的json格式的数据进行简单处理
 f.close()
