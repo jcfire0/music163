@@ -16,7 +16,7 @@ def geturl(url):
                         'User-Agent':'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36'}
                 r=requests.get(url,headers=header)
                 html=r.text
-                return html
+                return html                                  #通过对requests中加header操作，获取歌单界面的源代码中所没有的歌曲id
         except:
                 print u'歌曲ID获取失败'
               
@@ -27,7 +27,7 @@ def gequ(html):
 	rr=str(r)
 	q=re.compile('id=(.*?)"')
 	idd=re.findall(q,rr)
-	return idd
+	return idd                              #获取歌曲id，放进一个列表中
 
 class main():
 	url='http://music.163.com/playlist?id=908021904'
